@@ -1,40 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-using System.Windows.Markup;
-
+﻿using System.Data.SqlClient;
 
 namespace my_project
 {
     internal class DataBase
     {
-
         SqlConnection sglConnection = new SqlConnection(@"Data Source=DESKTOP-NTMKSG2\SQLEXPRESS;Initial Catalog=test;Integrated Security=True");
-
-        
-        public void openConnection()
+        public void OpenConnection()
         {
             if (sglConnection.State == System.Data.ConnectionState.Closed)
             {
                 sglConnection.Open();
             }
         }
-        public void closeConnection()
+        public void CloseConnection()
         {
             if (sglConnection.State == System.Data.ConnectionState.Open)
             {
                 sglConnection.Close();
             }
         }
-
-        public SqlConnection getConnection()
+        public SqlConnection GetConnection()
         {
             return sglConnection;
         }
-
     }
 }

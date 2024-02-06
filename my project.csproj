@@ -62,20 +62,20 @@
     </ApplicationDefinition>
     <Compile Include="byteImage.cs" />
     <Compile Include="DataBase.cs" />
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="MainWindowApplications.xaml.cs">
+      <DependentUpon>MainWindowApplications.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window2.xaml.cs">
-      <DependentUpon>Window2.xaml</DependentUpon>
+    <Compile Include="AuthorizationWindow.xaml.cs">
+      <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Window3.xaml.cs">
-      <DependentUpon>Window3.xaml</DependentUpon>
+    <Compile Include="WelcomeWindow.xaml.cs">
+      <DependentUpon>WelcomeWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="RegistrationWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -83,19 +83,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
+    <Page Include="MainWindowApplications.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window2.xaml">
+    <Page Include="AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Window3.xaml">
+    <Page Include="WelcomeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,28 +128,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="GIF2.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="GIF1.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="GIF3.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="54.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="2.png" />
-    <Resource Include="3.png" />
-    <Resource Include="4.png" />
-    <Resource Include="5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="6.png" />
+    <Resource Include="Assets\GIF\ImitationOfWebsiteOperation.gif" />
+    <Resource Include="Assets\picture\ButtonHome.png" />
+    <Resource Include="Assets\picture\ButtonInformation.png" />
+    <Resource Include="Assets\picture\ButtonInitialAvatar.jpg" />
+    <Resource Include="Assets\picture\ButtonInterface.png" />
+    <Resource Include="Assets\picture\ButtonNet.png" />
+    <Resource Include="Assets\picture\ButtonSearch.png" />
+    <Resource Include="Assets\picture\ButyonSave.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
