@@ -1,1 +1,1 @@
-приложение XAML C# SQL
+приложение XAML C# SQL \n \n TOPAcademi
