@@ -36,21 +36,30 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Grid.ColumnSpan="2"
+            <StackPanel Grid.Column="0" 
+                        Grid.ColumnSpan="2"
                         Orientation="Vertical">
-                <Label>ЗДРАВСТВУЙТЕ!!!</Label>
-                <Label>вас привецтвует</Label>
-                <Label>Какая-то Социальная сеть)</Label>
-                <StackPanel Orientation="Vertical" 
-                            HorizontalAlignment="Right">
+                <Label FontFamily="Comic Sans MS" 
+                       FontSize="16" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Center">ЗДРАВСТВУЙТЕ!!!</Label>
+                <Label FontFamily="SimSun" 
+                       FontSize="9" 
+                       HorizontalAlignment="Center">вас привецтвует</Label>
+                <Label HorizontalAlignment="Center" 
+                       Style="{StaticResource NotificationButtonStyle}">Какая-то Социальная сеть)</Label>
+                <StackPanel Orientation="Vertical">
                     <Button Content="Вход" 
-                            Style="{StaticResource StyleButtonSave1}" 
+                            Style="{StaticResource StyleButtonInterface}" 
                             Click="Button_Window_Vhod"/>
                     <Button Content="Регистрация" 
-                            Style="{StaticResource StyleButtonSave1}"
+                            Style="{StaticResource StyleButtonInterface}"
                             Click="Button_Window_Reg"/>
                 </StackPanel>
-                <Label>@KIVI.ru  :.  (+7 927...)</Label>
+                <Label HorizontalAlignment="Center"
+                       FontSize="8" 
+                       FontFamily="XO Thames"
+                       Style="{StaticResource NewNotificationButtonStyle}">Это сетевое приложение для...</Label>
             </StackPanel>
         </Grid>
     </DockPanel>

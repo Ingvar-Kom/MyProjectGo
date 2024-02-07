@@ -6,9 +6,20 @@ using System.Data.SqlClient;
 using System.Data;
 using System.IO;
 using Microsoft.Win32;
+using System.Windows.Controls;
 
 namespace my_project
 {
+    //public int Age
+    //{
+    //    get
+    //    {
+    //        var today = DateTime.Today;
+    //        var age = today.Year - DateOfBirth.Year;
+    //        if (DateOfBirth.Date > today.AddYears(-age)) age--;
+    //        return age;
+    //    }
+    //}
     public partial class RegistrationWindow : Window
     {
         DataBase dataBase = new DataBase();
@@ -18,27 +29,27 @@ namespace my_project
             InitializeComponent();
         }
         private void Label_MouseDown(object sender, MouseButtonEventArgs e) => DragMove();
-        private void button_Sign_Click(object sender, RoutedEventArgs e)
+        private void Button_Close_Window_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-        private void button_Svernut(object sender, RoutedEventArgs e)
+        private void Button_Minimized_Window_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
-        private void Button_Window_Vhod(object sender, RoutedEventArgs e)
+        private void Go_Button_To_The_Authorization_Window_Click(object sender, RoutedEventArgs e)
         {
             AuthorizationWindow authorizationWindow = new AuthorizationWindow();
             authorizationWindow.Show();
             Close();
         }
-        private void Button_Window_Vhod2(object sender, RoutedEventArgs e)
+        private void Button_Return_To_Start_Window_Click(object sender, RoutedEventArgs e)
         {
             WelcomeWindow welcomeWindow = new WelcomeWindow();
             welcomeWindow.Show();
             Close();
         }
-        private void Button_Window_D(object sender, RoutedEventArgs e)
+        private void Button_Registration_Click(object sender, RoutedEventArgs e)
         {
             string login                    = InputLog.Text.Trim();
             string pass                     = InputPass.Password.Trim();
@@ -84,10 +95,12 @@ namespace my_project
                     string connectionString = @"Data Source=DESKTOP-NTMKSG2\SQLEXPRESS;Initial Catalog=test;Integrated Security=True"; 
                     using (SqlConnection connection = new SqlConnection(connectionString)) 
                     {
-                        connection.Open(); 
-                        SqlCommand command  = new SqlCommand(); 
-                        command.Connection  = connection; 
-                        command.CommandText = $"INSERT INTO register(Rimage, login_user, password_user, LName, FName) VALUES (@ImageData, '{log}', '{pas}','{lName}','{fName}')"; 
+                        connection.Open();
+                        SqlCommand command = new SqlCommand
+                        {
+                            Connection = connection,
+                            CommandText = $"INSERT INTO register(Rimage, login_user, password_user, LName, FName) VALUES (@ImageData, '{log}', '{pas}','{lName}','{fName}')"
+                        };
                         command.Parameters.Add("@ImageData", SqlDbType.Image, 1000000);
                         command.Parameters["@ImageData"].Value = image_bytes;
 
@@ -141,11 +154,20 @@ namespace my_project
             image_bytes = File.ReadAllBytes(openFileDialog.FileName); 
             image.Source = ByteImage.Convert(ByteImage.GetImageFromByteArray(image_bytes)); 
         }
-        private void DemoClick(object sender, RoutedEventArgs e)
+        private void Early_Access_Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindowApplications mainWindowApplications = new MainWindowApplications();
             mainWindowApplications.Show();
             Close();
+        }
+        DateTime DateOfBirth;
+        private void Button_Click_Analiz(object sender, RoutedEventArgs e)
+        {
+            DateOfBirth = InputDateOfBirth.SelectedDate.Value;
+            var today = DateTime.Today;
+            var age = today.Year - DateOfBirth.Year;
+            if (DateOfBirth.Date > today.AddYears(-age)) age--;
+            InputAge.Text = age.ToString();
         }
     }
 }

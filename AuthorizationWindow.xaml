@@ -24,11 +24,11 @@
                     HorizontalAlignment="Right" >
             <Button Content="_" 
                     x:Name="btn_Sv" 
-                    Click="Button_Svernut" 
+                    Click="Button_Minimized_Window_Click" 
                     Style="{StaticResource StyleMinimizeWindowButton}"/>
             <Button Content="X" 
                     x:Name="btn_Close"
-                    Click="Button_Sign_Click" 
+                    Click="Button_Close_Window_Click" 
                     Style="{StaticResource StyleCloseButton}"/>
         </StackPanel>
         <Menu DockPanel.Dock="Top"
@@ -63,10 +63,10 @@
                 <StackPanel Orientation="Horizontal" 
                             HorizontalAlignment="Right">
                     <Button Content="Нет акаунта" 
-                            Style="{StaticResource StyleButtonSave1}"
+                            Style="{StaticResource StyleButtonInterface}"
                             Click="Button_Window_Reg"/>
                     <Button Content="Войти" 
-                            Style="{StaticResource StyleButtonSave1}"
+                            Style="{StaticResource StyleButtonInterface}"
                             Click="Button_Window_Avtoriz"/>
                 </StackPanel>
             </StackPanel>

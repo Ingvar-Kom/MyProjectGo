@@ -1,14 +1,12 @@
-﻿using System;
+﻿
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
-using XamlAnimatedGif;
 
 namespace my_project
 {
-    public partial class MainWindowApplications : Window
+    public partial class WebMainWindow : Window
     {
-        public MainWindowApplications()
+        public WebMainWindow()
         {
             InitializeComponent();
         }
@@ -19,7 +17,7 @@ namespace my_project
         }
         private void Button_Minimized_Window_Click(object sender, RoutedEventArgs e)
         {
-            WindowState = WindowState.Minimized; 
+            WindowState = WindowState.Minimized;
         }
         private void New_Info_Messeg(object sender, RoutedEventArgs e)
         {
@@ -34,21 +32,13 @@ namespace my_project
         {
             MessageBox.Show("пока-что нечего сохранять");
         }
-
         private void Button_Search_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://ya.ru");
         }
-
-        private void Button_ImitationOfWebsiteOperation_Click(object sender, RoutedEventArgs e)
-        {
-            
-            myImage.Source = new BitmapImage(new Uri("/Assets/GIF/ImitationOfWebsiteOperationPlanet.gif", UriKind.Relative));
-        }
-
         private void Mes_Demo(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("сработала какая-то функция)"); 
+            MessageBox.Show("сработала какая-то функция)");
         }
         private void Button_Window_Welcom(object sender, RoutedEventArgs e)
         {
@@ -56,16 +46,10 @@ namespace my_project
             welcomeWindow.Show();
             Close();
         }
-        private void Button_Window_Reg(object sender, RoutedEventArgs e)
+        private void Button_Window_Main(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow registrationWindow = new RegistrationWindow();
-            registrationWindow.Show();
-            Close();
-        }
-        private void Button_Window_Web(object sender, RoutedEventArgs e)
-        {
-            WebMainWindow webMainWindow = new WebMainWindow();
-            webMainWindow.Show();
+            MainWindowApplications mainWindowApplications = new MainWindowApplications();
+            mainWindowApplications.Show();
             Close();
         }
     }

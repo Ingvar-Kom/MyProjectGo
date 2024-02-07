@@ -25,22 +25,24 @@
                     HorizontalAlignment="Right" >
             <Button Content="_" 
                     x:Name="btn_Sv" 
-                    Click="button_Svernut" 
+                    Click="Button_Minimized_Window_Click" 
                     Style="{StaticResource StyleMinimizeWindowButton}"/>
             <Button Content="X" 
                     x:Name="btn_Close" 
-                    Click="button_Sign_Click" 
+                    Click="Button_Close_Window_Click" 
                     Style="{StaticResource StyleCloseButton}"/>
         </StackPanel>
         <Menu DockPanel.Dock="Top"
               Style="{StaticResource StyleDefault}">
+            
+            
             <MenuItem Header="Назад" 
-                      Click="Button_Window_Vhod2"/>
+                      Click="Button_Return_To_Start_Window_Click"/>
             <MenuItem Header="Дополнительно">
                 <MenuItem Header="Оставить отзыв" />
                 <MenuItem Header="Инструкция" />
                 <MenuItem Header="Настройки" />
-                <MenuItem Header="DEMO версия" Click="DemoClick"/>
+                <MenuItem Header="DEMO версия" Click="Early_Access_Button_Click"/>
             </MenuItem>
         </Menu>
         <Grid>
@@ -86,6 +88,10 @@
                         <TextBox x:Name="InputAge"
                                  IsEnabled="False"
                                  Style="{StaticResource StyleInputAge}"/>
+                        <Button Content="Анализ Даты"
+                                Style="{StaticResource StyleDefault}"
+                                x:Name="Analiz"
+                                Click="Button_Click_Analiz"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
@@ -107,13 +113,13 @@
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Content="Уже есть акаунт" 
-                            Style="{StaticResource StyleButtonSave1}"
-                            Click="Button_Window_Vhod">
+                            Style="{StaticResource StyleButtonInterface}"
+                            Click="Go_Button_To_The_Authorization_Window_Click">
                     </Button>
 
                     <Button Content="Зарегестрироваться" 
-                            Style="{StaticResource StyleButtonSave1}"
-                            Click="Button_Window_D">
+                            Style="{StaticResource StyleButtonInterface}"
+                            Click="Button_Registration_Click">
                     </Button>
                 </StackPanel>
             </StackPanel>
