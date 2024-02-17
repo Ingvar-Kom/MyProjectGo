@@ -68,6 +68,9 @@
     <Compile Include="AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WebMainWindow.xaml.cs">
+      <DependentUpon>WebMainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeWindow.xaml.cs">
       <DependentUpon>WelcomeWindow.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AuthorizationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WebMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,6 +143,9 @@
     <Resource Include="Assets\picture\ButtonNet.png" />
     <Resource Include="Assets\picture\ButtonSearch.png" />
     <Resource Include="Assets\picture\ButyonSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\GIF\ImitationOfWebsiteOperationPlanet.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

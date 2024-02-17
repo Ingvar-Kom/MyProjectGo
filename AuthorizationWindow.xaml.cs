@@ -14,11 +14,11 @@ namespace my_project
             InitializeComponent();
         }
         private void Label_MouseDown(object sender, MouseButtonEventArgs e) => DragMove();
-        private void Button_Sign_Click(object sender, RoutedEventArgs e)
+        private void Button_Close_Window_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-        private void utton_Svernut(object sender, RoutedEventArgs e)
+        private void Button_Minimized_Window_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
